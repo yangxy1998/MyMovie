@@ -1,0 +1,49 @@
+@keyframes appear {
+    0%{opacity: 0}
+    100%{opacity: 1}
+}
+
+#WelcomeImage{
+/*    background-size: contain;
+    width:100%;*/
+    width:100%;
+}
+#mTitle{
+    animation: appear 5s;
+    font-size: 200px;
+    font-family: 方正行楷简体;
+    color: white;
+    position:absolute;
+    left: 20%;
+    top:30%;
+}
+#info{
+    animation: appear 8s ;
+    font-size: 25px;
+    font-family: 方正行楷简体;
+    color: white;
+    position:absolute;
+    left: 60%;
+    top:63%;
+}
+.bg{
+    /*background-image: url(../../content/City.jpg);*/
+    text-align: center;
+    width: 100%;
+}
+.mybtn{
+    animation: appear 5s ;
+
+}
+#login{
+    position:absolute;
+    width: 10%;
+    left: 45%;
+    top:80%;
+}
+#sign{
+    position:absolute;
+    width: 10%;
+    left: 45%;
+    top:90%;
+}
