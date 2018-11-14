@@ -1,49 +1,147 @@
-@keyframes appear {
-    0%{opacity: 0}
-    100%{opacity: 1}
+body{
+min-width: 1500px;
 }
-
 #WelcomeImage{
 /*    background-size: contain;
     width:100%;*/
     width:100%;
 }
+@keyframes appear {
+    0%{opacity: 0}
+    50%{opacity: 0.7}
+    100%{opacity: 1}
+}
+/*主标题*/
 #mTitle{
-    animation: appear 5s;
+    min-width: 1000px;
+    animation: appear 6s;
     font-size: 200px;
     font-family: 方正行楷简体;
     color: white;
     position:absolute;
     left: 20%;
-    top:30%;
+    top:25%;
 }
+/*描述文字*/
 #info{
+    min-width: 330px;
     animation: appear 8s ;
     font-size: 25px;
     font-family: 方正行楷简体;
     color: white;
     position:absolute;
     left: 60%;
-    top:63%;
+    top:57%;
 }
 .bg{
-    /*background-image: url(../../content/City.jpg);*/
     text-align: center;
     width: 100%;
 }
+/*按钮动画*/
+@keyframes btnappear {
+    0%{opacity: 0}
+    100%{opacity: 0.7}
+}
+/*我的按钮*/
 .mybtn{
+    animation: btnappear 3s ;
+    border: 1px #c5cccc solid;
+    border-radius: 5px;
+    position:absolute;
+    width: 20%;
+    height: 6%;
+    left: 42.5%;
+    opacity: 0.7;
+    font-size: 18px;
+}
+/*登录按钮*/
+#login{
+    background-color: white;
+    font-weight: bold;
+    color: #165d77;
+    top:73%;
+}
+/*游客按钮*/
+#tour{
+    background-color: transparent;
+    font-weight: bold;
+    color: white;
+    top:85%;
+}
+/*注册链接*/
+#sign{
     animation: appear 5s ;
+    color: white;
+    position: absolute;
+    top: 79%;
+    left: 48%;
+}
+.mybtn:active{
+    border: 3px #c5cccc solid;
+    border-radius: 10px;
+    box-shadow: white ;
+}
+.mybtn:hover{
+    border: 5px #c5cccc solid;
+    border-radius: 10px;
+}
+
+.modal-dialog{
+    padding-top: 0px;
+    width: 40%;
+    left: 30%;
+    top: 20%;
+    height: 60%;
+    position: absolute;
+/*    background-color: white;*/
+}
+#LoginBox{
+    width:65%;
+    height: 100%;
+    background-color: #ffffff;
+    margin:auto;
+    border-radius: 0px;
+    border: 1px solid;
+}
+
+#loginContent{
+    list-style: none;
+    padding: 20px;
+}
+#loginTitle{
+    text-align: center;
+    color: black;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: 方正行楷简体;
+}
+hr{
+    margin-top: 5px;
+}
+ul li input[type*="button"]{
+    width: 100%;
+    height: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #c4c4c4;
+    border-radius: 5px;
+    border: 1px solid #7d8862;
 
 }
-#login{
-    position:absolute;
-    width: 10%;
-    left: 45%;
-    top:80%;
+ul li input[type*="button"]:active{
+
 }
-#sign{
-    position:absolute;
-    width: 10%;
-    left: 45%;
-    top:90%;
+ul li input[type*="button"]:hover{
+
 }
+ul li div{
+    margin-top: 30px;
+    width: 260px;
+    height: 40px;
+    background-color: #ffffff;
+}
+
+

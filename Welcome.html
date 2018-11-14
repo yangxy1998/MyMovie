@@ -7,6 +7,7 @@
     <title>MyMovie</title>
     <link rel="stylesheet"href="src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/Welcome.css">
+
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -18,21 +19,20 @@
             <ul class="nav navbar-nav">
                 <li><A> </A>   </li>
                 <li class="active"><a href="./index.html">主界面</a></li>
-                <li><a href="#contact"> Contact</a></li>
-                <li><a href="#about">About</a></li>
                 <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">科幻星空</a></li>
+                        <li><a href="#">魔幻史诗</a></li>
+                        <li><a href="#">纯爱之家</a></li>
+                        <li><a href="#">欢乐剧场</a></li>
+                        <li><a href="#">文艺经典</a></li>
+                        <li><a href="#">惊喜杂烩</a></li>
                     </ul>
                 </li>
+                <li><a href="#contact"> Contact</a></li>
+                <li><a href="#about">About</a></li>
+
             </ul>
 
             <ul class="nav navbar-nav navbar-right" >
@@ -47,9 +47,48 @@
     <img id="WelcomeImage"  src="content/sea.jpg">
     <p id="mTitle">My Movie</p><!--主标题-->
     <p id="info">感受光影魅力,记录美好时光</p>
-    <button class="btn-lg mybtn" id="login">登录</button>
-    <button class="btn-lg mybtn" id="sign">注册</button>
+    <!--俩按钮-->
+    <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>
+    <a href="#" id="sign">没有账号，赶紧注册</a>
+    <button class="mybtn" id="tour">游客访问</button>
 </div>
+<!--登录窗口-->
+<div class="modal fade" id="LoginModal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="LoginBox">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"> x</button>
+                <form action="" method="post">
+                    <ul id="loginContent">
+                        <p id="loginTitle">登录MyMovie</p>
+                       <hr>
+                        <li>
+                            <div class="text">
+                                <span id="userIcon"></span><input type="text" placeholder="IconDeposit">
+                            </div>
+                        </li>
+                        <li>
+                            <div class="password">
+                                <span id="passwordIcon"></span><input type="password" placeholder="••••••••••••••">
+                            </div>
+                        </li>
+                        <li class="remember">
+                            <input type="checkbox">Remember Me
+                        </li>
+                        <li>
+                            <a href="">Forgot username or password?</a>
+                        </li>
+                        <li>
+                            <input type="button" value="Login">
+                        </li>
+                    </ul>
+                </form>
+
+            </div>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 
 <script src="src/jquery/jquery.min.js"></script>
 <script src="src/bootstrap/js/bootstrap.min.js"></script>

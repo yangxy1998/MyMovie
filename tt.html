@@ -1,40 +1,102 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>导入JavaScript插件</title>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <style>
+        body
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            margin: 0;
+        }
+        #main
+        {
+            height: 1800px;
+            padding-top: 90px;
+            text-align: center;
+        }
+        #fullbg
+        {
+            background-color: gray;
+            left: 0;
+            opacity: 0.5;
+            position: absolute;
+            top: 0;
+            z-index: 3;
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            -khtml-opacity: 0.5;
+        }
+        #dialog
+        {
+            background-color: #fff;
+            border: 5px solid rgba(0,0,0, 0.4);
+            height: 400px;
+            left: 50%;
+            margin: -200px 0 0 -200px;
+            padding: 1px;
+            position: fixed !important; /* 浮动对话框 */
+            position: absolute;
+            top: 50%;
+            width: 400px;
+            z-index: 5;
+            border-radius: 5px;
+            display: none;
+        }
+        #dialog p
+        {
+            margin: 0 0 12px;
+            height: 24px;
+            line-height: 24px;
+            background: #CCCCCC;
+        }
+        #dialog p.close
+        {
+            text-align: right;
+            padding-right: 10px;
+        }
+        #dialog p.close a
+        {
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<button class="btn btn-primary" type="button">点击我</button>
-<div class="modal fade" id="mymodal">
-    <div class="modal-dialog">
-        <div class="modal-content" style="width: 50%">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
-                <h4 class="modal-title">模态弹出窗标题</h4>
-            </div>
-            <div class="modal-body">
-                <p>模态弹出窗主体内容</p>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">保存</button>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-
-
-<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-transition.js"></script>
-<script src="http://cdn.bootcss.com/bootstrap/2.3.1/js/bootstrap-modal.js"></script>
-<script>
-    $(function(){
-        $(".btn").click(function(){
-            $("#mymodal").modal("toggle");
+<div id="main">
+    <a href="javascript:showBg();">点击这里查看效果</a>
+    <div>
+        <a href="#" onclick="sayHi();" >Say Hi</a>
+    </div>
+    <div id="fullbg">
+    </div>
+    <div id="dialog">
+        <p class="close">
+            <a href="#" onclick="closeBg();">关闭</a></p>
+        <div>
+            正在加载，请稍后....</div>
+    </div>
+</div>
+<script type="text/javascript">
+    function sayHi() {
+        alert("Hi! Hi!");
+    }
+    //显示灰色 jQuery 遮罩层
+    function showBg() {
+        var bh = $("body").height();
+        var bw = $("body").width();
+        $("#fullbg").css({
+            height: bh,
+            width: bw,
+            display: "block"
         });
-    });
+        $("#dialog").show();
+    }
+    //关闭灰色 jQuery 遮罩
+    function closeBg() {
+        $("#fullbg,#dialog").hide();
+    }
 </script>
 </body>
 </html>
