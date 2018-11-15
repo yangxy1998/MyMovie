@@ -1,20 +1,40 @@
 body{
-min-width: 1500px;
+    min-width: 1500px;
+}
+@keyframes BarHover {
+    0%{ opacity: 0;}
+    100%{opacity: 1}
+}
+@keyframes BarLeave {
+    0%{ opacity: 1;}
+    100%{opacity: 0;}
+}
+nav{
+    opacity: 0;
+}
+nav:hover{
+    animation: BarHover 1s;
+    opacity: 1;
 }
 #WelcomeImage{
 /*    background-size: contain;
     width:100%;*/
     width:100%;
 }
-@keyframes appear {
-    0%{opacity: 0}
+@keyframes appearLeft {
+    0%{opacity: 0;left: 0px}
     50%{opacity: 0.7}
-    100%{opacity: 1}
+    100%{opacity: 1;left: 20%;}
+}
+@keyframes appearRight {
+    0%{opacity: 0;left: 77%}
+    50%{opacity: 0.7}
+    100%{opacity: 1;left: 60%;}
 }
 /*主标题*/
 #mTitle{
     min-width: 1000px;
-    animation: appear 6s;
+    animation: appearLeft 4s;
     font-size: 200px;
     font-family: 方正行楷简体;
     color: white;
@@ -25,7 +45,7 @@ min-width: 1500px;
 /*描述文字*/
 #info{
     min-width: 330px;
-    animation: appear 8s ;
+    animation: appearRight 4s ;
     font-size: 25px;
     font-family: 方正行楷简体;
     color: white;
@@ -40,11 +60,12 @@ min-width: 1500px;
 /*按钮动画*/
 @keyframes btnappear {
     0%{opacity: 0}
+    25%{opacity: 0}
     100%{opacity: 0.7}
 }
 /*我的按钮*/
 .mybtn{
-    animation: btnappear 3s ;
+    animation: btnappear 5s ;
     border: 1px #c5cccc solid;
     border-radius: 5px;
     position:absolute;
@@ -69,8 +90,13 @@ min-width: 1500px;
     top:85%;
 }
 /*注册链接*/
+@keyframes sianappear {
+    0%{opacity: 0}
+    25%{opacity: 0}
+    100%{opacity:1}
+}
 #sign{
-    animation: appear 5s ;
+    animation: sianappear 5s ;
     color: white;
     position: absolute;
     top: 79%;
@@ -95,22 +121,22 @@ min-width: 1500px;
     position: absolute;
 /*    background-color: white;*/
 }
-#LoginBox{
+.LoginBox{
     width:65%;
     height: 100%;
-    background-color: #ffffff;
+    background-color: #87bad2;
     margin:auto;
-    border-radius: 0px;
+    border-radius: 7px;
     border: 1px solid;
 }
 
-#loginContent{
+.loginContent{
     list-style: none;
     padding: 20px;
 }
-#loginTitle{
+.loginTitle{
     text-align: center;
-    color: black;
+    color: #ffffff;
     margin-top: 20px;
     margin-bottom: 0px;
     font-size: 40px;
@@ -121,27 +147,55 @@ hr{
     margin-top: 5px;
 }
 ul li input[type*="button"]{
-    width: 100%;
+    width: 80%;
     height: 40px;
-    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+    font-family: 方正行楷简体;
     font-size: 18px;
     color: #ffffff;
-    background-color: #c4c4c4;
+    background-color: #42a6cd;
     border-radius: 5px;
-    border: 1px solid #7d8862;
-
-}
-ul li input[type*="button"]:active{
+    border: 0px solid #d7d7d7;
 
 }
 ul li input[type*="button"]:hover{
+    border-radius: 8px;
+    border: 1px solid white;
+}
+ul li input[type*="button"]:active{
+    background-color: #3a94b9;
 
 }
-ul li div{
-    margin-top: 30px;
-    width: 260px;
+form ul li{
+    margin-top: 10px;
+    width: 100%;
+    background-color:transparent;
+
+}
+form ul li div{
     height: 40px;
-    background-color: #ffffff;
-}
+    padding: 5px;
 
+}
+.loginInput{
+    background-color: #cfe0e7;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    width: 80%;
+    height: 40px;
+    margin-left: 15px;
+}
+.loginInput:hover{
+    background-color:white;
+}
+.loginInput:active{
+    background-color: white;
+}
+.centeroflogin{
+margin-left: 40px;
+}
+.userIcon{
+    width: 30px;
+    height:30px;
+}
 
