@@ -12,7 +12,6 @@
       <root url="jar://$PROJECT_DIR$/web/lib/antlr.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/lib/struts-core.jar!/" />
     </CLASSES>
-    <JAVADOC />
     <SOURCES />
   </library>
 </component>

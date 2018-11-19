@@ -1,0 +1,10 @@
+#mainContent{
+    text-align: center;
+    height:2000px;
+}
+body{
+    text-align: center;
+}
+.carousel-inner{
+    height: 300px;
+}
