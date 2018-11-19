@@ -29,13 +29,15 @@ nav{
 }
 /*用户头像*/
 #userInfo{
-    margin: 0px;
-    padding: 0px;
+
     border-radius: 50%;
     height: 30px;
     width: 30px;
 }
+nav li p{
 
+    margin-top: 10px;
+}
 #top{
     color: #2aabd2;
     font-size: large;
