@@ -75,7 +75,7 @@
     <!--俩按钮-->
     <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>
     <a href="#" id="sign"  data-toggle="modal" data-target="#SignModal">没有账号，赶紧注册</a>
-    <button class="mybtn" id="tour" onclick={location.href='/init'}>游客访问</button>
+    <button class="mybtn" id="tour" onclick={location.href='index.html'}>游客访问</button>
 </div>
 <!--登录窗口-->
 <div class="modal fade" id="LoginModal">
@@ -83,18 +83,18 @@
         <div class="modal-content LoginBox">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal"> x</button>
-                <form action="/login" method="post">
+                <form action="" method="post">
                     <ul class="loginContent">
                         <p class="loginTitle">登录MyMovie</p>
                         <hr>
                         <li>
                             <div>
-                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="username" placeholder="UserName">
+                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" placeholder="UserName">
                             </div>
                         </li>
                         <li>
                             <div>
-                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="password" placeholder="">
+                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" placeholder="••••••••••••••">
                             </div>
                         </li>
                         <li class="remember centeroflogin">
@@ -104,7 +104,7 @@
                             <a href="" class="centeroflogin">Forgot username or password?</a>
                         </li>
                         <li>
-                            <input type="submit" value="Login" class="centeroflogin loginbtn">
+                            <input type="button" value="Login" class="centeroflogin loginbtn">
                         </li>
                         <li><p id="loginInfo" class="centeroflogin"></p></li>
                     </ul>
