@@ -1,8 +1,42 @@
 nav{
     font-family: "方正行楷简体";
     font-size: large;
+    border-bottom: none;
 }
-nav:hover{
+.dropdown-menu{
+    text-align: left;
+    min-width: 30px;
+}
+.dropdown #acountMenu{
+    min-width: 20px;
+    font-size: 16px;
+    text-align:left;
+    margin-left: 25px;
+}
+.dropdown ul li{
+    font-size: 16px;
+    font-weight: bold;
+}
+.dropdown .dropdown-toggle{
+    padding-bottom: 0px;
+}
+.dropdown ul li img{
+    padding: 0px;
+    margin: 0px;
+    height: 20px;
+    width: 20px;
+
+}
+/*用户头像*/
+#userInfo{
+
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+nav li p{
+
+    margin-top: 10px;
 }
 #top{
     color: #2aabd2;

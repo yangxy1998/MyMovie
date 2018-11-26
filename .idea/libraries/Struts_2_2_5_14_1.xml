@@ -9,6 +9,7 @@
       <root url="jar://$PROJECT_DIR$/web/lib/freemarker.jar!/" />
       <root url="jar://$PROJECT_DIR$/web/lib/struts2-core.jar!/" />
     </CLASSES>
+    <JAVADOC />
     <SOURCES />
   </library>
 </component>

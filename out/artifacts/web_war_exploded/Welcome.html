@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="content/icon.ico">
     <title>MyMovie</title>
     <link rel="stylesheet"href="src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/Welcome.css">
@@ -23,12 +24,12 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">科幻星空</a></li>
-                        <li><a href="#">魔幻史诗</a></li>
-                        <li><a href="#">纯爱之家</a></li>
-                        <li><a href="#">欢乐剧场</a></li>
-                        <li><a href="#">文艺经典</a></li>
-                        <li><a href="#">惊喜杂烩</a></li>
+                        <li><a href="science.html">科幻星空</a></li>
+                        <li><a href="magic.html">魔幻史诗</a></li>
+                        <li><a href="love.html">纯爱之家</a></li>
+                        <li><a href="happy.html">欢乐剧场</a></li>
+                        <li><a href="classic.html">文艺经典</a></li>
+                        <li><a href="Welcome.html"> 开始</a></li>
                     </ul>
                 </li>
 
@@ -36,11 +37,32 @@
 
             </ul>
 
-            <ul class="nav navbar-nav navbar-right" >
-                <!--<li style="display:inline;"><a href="../navbar/"><img src="content/City.jpg"></a></li>-->
+            <!--未登录（登录注册按钮）-->
+            <!--<ul class="nav navbar-nav navbar-right"  id="unlogin">
+                &lt;!&ndash;<li style="display:inline;"><a href="../navbar/"><img src="content/City.jpg"></a></li>&ndash;&gt;
                 <li style="display:inline;"><a data-toggle="modal" data-target="#LoginModal">登录</a></li>
                 <li ><a data-toggle="modal" data-target="#SignModal">注册</a></li>
+            </ul>-->
+
+            <!--登录后（相关菜单）-->
+            <ul class="nav navbar-nav navbar-right"  id="logined">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img src="content/City.jpg"id="userInfo"><span class="caret"></span>
+                </a>
+                    <ul class="dropdown-menu" id="acountMenu">
+                        <li><a href="mySpace.html"><img src="content/home.svg">  &nbsp;我的空间</a></li>
+                        <li class="divider"></li>
+                        <li><a><img src="content/exit.svg">  &nbsp;退出</a></li>
+                    </ul>
+                </li>
+                <li><p>username</p></li>
+
             </ul>
+            <!--<ul class="nav navbar-nav navbar-right" id="logined">
+                &lt;!&ndash;<li style="display:inline;"><a href="../navbar/"><img src="content/City.jpg"></a></li>&ndash;&gt;
+                <li style="display:inline;"><a href="mySpace.html"><img src="content/try.jpg" id="userInfo"></a></li>
+            </ul>-->
         </div><!--/.nav-collapse -->
     </div>
 </nav>
@@ -53,7 +75,7 @@
     <!--俩按钮-->
     <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>
     <a href="#" id="sign"  data-toggle="modal" data-target="#SignModal">没有账号，赶紧注册</a>
-    <button class="mybtn" id="tour">游客访问</button>
+    <button class="mybtn" id="tour" onclick={location.href='/init'}>游客访问</button>
 </div>
 <!--登录窗口-->
 <div class="modal fade" id="LoginModal">
@@ -61,18 +83,18 @@
         <div class="modal-content LoginBox">
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal"> x</button>
-                <form action="" method="post">
+                <form action="/login" method="post">
                     <ul class="loginContent">
                         <p class="loginTitle">登录MyMovie</p>
                         <hr>
                         <li>
                             <div>
-                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" placeholder="UserName">
+                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="username" placeholder="UserName">
                             </div>
                         </li>
                         <li>
                             <div>
-                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" placeholder="••••••••••••••">
+                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="password" placeholder="">
                             </div>
                         </li>
                         <li class="remember centeroflogin">
@@ -82,7 +104,7 @@
                             <a href="" class="centeroflogin">Forgot username or password?</a>
                         </li>
                         <li>
-                            <input type="button" value="Login" class="centeroflogin">
+                            <input type="submit" value="Login" class="centeroflogin loginbtn">
                         </li>
                         <li><p id="loginInfo" class="centeroflogin"></p></li>
                     </ul>
@@ -94,7 +116,7 @@
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<!<--注册窗口-->
+<!--注册窗口-->
 <div class="modal fade" id="SignModal">
     <div class="modal-dialog">
         <div class="modal-content LoginBox">
@@ -121,7 +143,7 @@
                         </li>
 
                         <li>
-                            <input type="submit" value="Register" class="centeroflogin">
+                            <input type="submit" value="Register" class="centeroflogin loginbtn">
                         </li>
                         <li><p id="signInfo" class="centeroflogin"></p></li>
                     </ul>
