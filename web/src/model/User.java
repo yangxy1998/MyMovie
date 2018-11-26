@@ -1,6 +1,9 @@
 package model;
 
 public class User {
+    //游客
+    public static User GUEST=new User("Guest","");
+
     public String getUserName() {
         return userName;
     }
@@ -21,6 +24,8 @@ public class User {
         this.userName=userName;
         this.password=password;
     }
+
+    public User(){}
     private String userName;
     private String password;
 }

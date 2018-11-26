@@ -6,6 +6,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 public class RegisterServlet extends HttpServlet {
@@ -16,7 +17,9 @@ public class RegisterServlet extends HttpServlet {
         if(password!=null&&password.equals(password_2)){
             User newUser=new User(username,password);
             //请求重定向到首页
-            response.sendRedirect("./Welcome.html");
+            HttpSession session=request.getSession();
+            session.setAttribute("user",newUser);
+            response.sendRedirect("./index.jsp");
         }
     }
 

@@ -3,6 +3,7 @@ package controller;
 import model.User;
 import util.Server;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +17,12 @@ public class LoginServlet extends HttpServlet {
         String password=request.getParameter("password");
         if(userName!=null){
             User user=Server.findUser(userName);
-            if(!user.getUserName().equals(password))Server.errorMessage(Server.STATUS_PASSWORD_ERROR);
+            if(!password.equals(user.getPassword()))
+                Server.errorMessage(Server.STATUS_PASSWORD_ERROR);
             else{
                 HttpSession session=request.getSession();
-                session.setAttribute("User",user);
-                response.sendRedirect("./index.html");
+                session.setAttribute("user",user);
+                response.sendRedirect("./index.jsp");
             }
         }
     }

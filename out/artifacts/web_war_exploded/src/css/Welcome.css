@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 方正行楷简体;
+
+}
 body{
     min-width: 1500px;
 }
@@ -146,10 +150,13 @@ nav:hover{
 hr{
     margin-top: 5px;
 }
-ul li input[type*="button"]{
+
+/*登陆框中按钮*/
+.loginbtn{
     width: 80%;
     height: 40px;
     margin-top: 20px;
+
     font-family: 方正行楷简体;
     font-size: 18px;
     color: #ffffff;
@@ -158,11 +165,11 @@ ul li input[type*="button"]{
     border: 0px solid #d7d7d7;
 
 }
-ul li input[type*="button"]:hover{
+.loginbtn:hover{
     border-radius: 8px;
     border: 1px solid white;
 }
-ul li input[type*="button"]:active{
+.loginbtn:active{
     background-color: #3a94b9;
 
 }
@@ -192,7 +199,7 @@ form ul li div{
     background-color: white;
 }
 .centeroflogin{
-margin-left: 40px;
+    margin-left: 40px;
 }
 .userIcon{
     width: 30px;

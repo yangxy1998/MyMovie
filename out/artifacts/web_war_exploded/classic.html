@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="content/icon.ico">
+    <title>文艺经典</title>
+    <link rel="stylesheet"href="src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/Navbar.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" id="top" >MyMovie</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" >
+            <ul class="nav navbar-nav">
+                <li><A> </A>   </li>
+                <li><a href="Welcome.html"> 开始</a></li>
+                <li class="active"><a href="./index.html">主界面</a></li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="science.html">科幻星空</a></li>
+                        <li><a href="magic.html">魔幻史诗</a></li>
+                        <li><a href="love.html">纯爱之家</a></li>
+                        <li><a href="happy.html">欢乐剧场</a></li>
+                        <li><a href="classic.html">文艺经典</a></li>
+                        <li><a href="Welcome.html"> 开始</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="#about">About</a></li>
+
+            </ul>
+
+            <!--未登录（登录注册按钮）-->
+            <!--<ul class="nav navbar-nav navbar-right"  id="unlogin">
+                &lt;!&ndash;<li style="display:inline;"><a href="../navbar/"><img src="content/City.jpg"></a></li>&ndash;&gt;
+                <li style="display:inline;"><a data-toggle="modal" data-target="#LoginModal">登录</a></li>
+                <li ><a data-toggle="modal" data-target="#SignModal">注册</a></li>
+            </ul>-->
+
+            <!--登录后（相关菜单）-->
+            <ul class="nav navbar-nav navbar-right"  id="logined">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img src="content/City.jpg"id="userInfo"><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" id="acountMenu">
+                        <li><a href="mySpace.html"><img src="content/home.svg">  &nbsp;我的空间</a></li>
+                        <li class="divider"></li>
+                        <li><a><img src="content/exit.svg">  &nbsp;退出</a></li>
+                    </ul>
+                </li>
+                <li><p>username</p></li>
+
+            </ul>
+            <!--<ul class="nav navbar-nav navbar-right" id="logined">
+                &lt;!&ndash;<li style="display:inline;"><a href="../navbar/"><img src="content/City.jpg"></a></li>&ndash;&gt;
+                <li style="display:inline;"><a href="mySpace.html"><img src="content/try.jpg" id="userInfo"></a></li>
+            </ul>-->
+        </div><!--/.nav-collapse -->
+    </div>
+</nav>
+
+
+<script src="src/jquery/jquery.min.js"></script>
+<script src="src/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
