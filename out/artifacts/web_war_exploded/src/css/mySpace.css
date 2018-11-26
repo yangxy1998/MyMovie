@@ -1,9 +1,114 @@
 #top{
-
-    margin-top: 15px;
 }
+body{
+
+    /*background-color: #f4f6f9;*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size:100%;
+}
+.MS>div{
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
 #userInfo{
     width: 35px;
     height: 35px;
     margin-top: 10px;
+}
+/*右侧标签菜单*/
+#tabMenu{
+    box-shadow: 3px 3px 1px #b8b8b8;
+    border: 1px  solid #c4c4c4;
+    border-right: none;
+    border-radius: 1px;
+}
+#tabMenu ul{
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+#tabMenu ul li a{
+    color: black;
+}
+/*当前选择*/
+.current{
+    background-color: #adadad;
+}
+.ncurrent{
+    background-color: transparent;
+}
+
+/*用户信息*/
+#myInfo{
+    box-shadow: 3px 3px 1px #b8b8b8;
+    padding-top: 80px;
+    height: 600px;
+    border: 1px  solid #c4c4c4;
+    border-radius: 3px;
+}
+/*用户信息*/
+.title{
+    font-size: 35px;
+}
+.information ul li{
+    min-height: 30px;
+    list-style: none;
+}
+.information ul li p{
+    margin-right: 15px;
+    display: inline;
+}
+.information ul{
+    padding-right: 0px;
+}
+#changeInfo{
+    float: right;
+}
+/*头像*/
+.userimg ul li{
+    list-style: none;
+}
+#touxiang{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+#changeImg{
+    margin-left: 18px;
+}
+/*我的影评*/
+#myComment{
+    display: none;
+    box-shadow: 3px 3px 1px #b8b8b8;
+    padding-top: 80px;
+    min-height: 600px;
+    border: 1px  solid #c4c4c4;
+    border-radius: 3px;
+}
+#myComment ul{
+    padding-right: 40px;padding-left: 40px;
+    padding-top: 0px;
+
+}
+.comment{
+    padding: 5px;
+    list-style: none;
+    border: solid silver 0px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 1px #adadad;
+    margin-bottom: 3px;
+}
+.comment hr{
+    margin-top: 5px;
+    margin-bottom: 2px;
+    height: 10px;
+}
+/*我的收藏*/
+#myCollection{
+    display: none;
+    box-shadow: 3px 3px 1px #b8b8b8;
+    padding-top: 80px;
+    min-height: 600px;
+    border: 1px  solid #c4c4c4;
+    border-radius: 3px;
 }
