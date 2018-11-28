@@ -148,6 +148,7 @@ li *{display: inline}
     display: none;
 }
 .commetPage .ranksd .ranks{
+    width: 100%;
     margin-left: 0px;
 }
 .top3 .briefContent,.writer{
@@ -156,6 +157,32 @@ li *{display: inline}
 .briefContent,.writer{
     font-size: 15px;
 }
+.comment .dianzan{
+    float: right;
+}
+.comment{
+    padding: 5px;
+    list-style: none;
+    border: solid silver 0px;
+    border-radius: 10px;
+    box-shadow: 2px 1px 1px #adadad;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+.comment .title{
+    float: left;
+    display: inline;
+}
+.comment .writer{
+    float: right;
+}
+.commentHR{
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 2px;
+    height: 10px;
+}
+
 .bottom{
     height: 200px;
     width: 100%;
