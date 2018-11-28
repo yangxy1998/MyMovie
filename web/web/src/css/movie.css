@@ -1,2 +1,49 @@
 nav{opacity: 1;  }
 nav:hover{animation: none;  }
+.mainpage{
+    border: solid silver 1px;
+    border-bottom: none;
+    margin-top: 200px;
+    min-height: 800px;
+}
+.header{
+    height: 2px;
+    margin-top: 60px;
+    margin-left: 20px;
+    text-align:left;
+    /*border-top: 1px solid #b9b9b9;*/
+}
+.mainpic{
+    width: 300px;
+    position: relative;
+    left: 20px;
+    top:-200px;
+}
+.title{
+    border-left: 4px solid #006599;
+    font-size: 20px;
+    position: relative;
+    left: -10px;
+    top:-25px;
+}
+#briefInfo{
+    margin-top: 170px;
+}
+#introduce{
+    white-space:normal;
+    max-width: 800px;
+}
+#info{
+ margin-left: 400px;
+}
+
+
+
+
+
+
+.bottom{
+    height: 200px;
+    width: 100%;
+    background: transparent;
+}
