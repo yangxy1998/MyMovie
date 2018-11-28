@@ -129,16 +129,16 @@ nav:hover{animation: none;  }
     width:200px;
 }
 .ranksd .ranks{width:80%;padding-top: 10px;padding-bottom: 20px; margin-left: 27px; border: solid 1px rgba(220, 208, 255, 0.44);text-align: center ;border-radius: 5px }
-.ranks li{text-align:center; list-style: none;width: 90%;margin-left:20px;margin-top:5px;font-size: 20px;border-bottom: solid 1px rgba(76, 76, 76, 0.13)
+.ranks li{list-style: none;width: 90%;margin-left:20px;margin-top:5px;font-size: 20px;border-bottom: solid 1px rgba(76, 76, 76, 0.13)
 }
-.ranks li .rankcenter{width: 40%;display: inline-block}
-.ranks li .rankcenter2{width:50%;display: inline-block}
+.ranks li .rankcenter{width: 20%;display: inline-block}
+/*.ranks li .rankcenter2{width:50%;display: inline-block}*/
 li *{display: inline}
 .ranks{margin-left: 10px;padding-left: 0%}
 .rank{min-height: 20px}
 .rank p{font-size: 20px ;}
 .ranks .top3{font-size: 30px}
-.top3 .award{width: 30px;height: 30px}
+.top3 .award{width: 30px;height: 30px; left: 0px;text-align: left}
 .top3 img{width: 20px;height: 30px;margin-right: 5px}
 .top10 img{width: 10px;height: 15px;margin-right: 2px;font-weight:200}
 .hot{color: #ff9b6c  }
@@ -146,6 +146,15 @@ li *{display: inline}
 
 .commetPage{
     display: none;
+}
+.commetPage .ranksd .ranks{
+    margin-left: 0px;
+}
+.top3 .briefContent,.writer{
+      font-size: 20px;
+  }
+.briefContent,.writer{
+    font-size: 15px;
 }
 .bottom{
     height: 200px;
