@@ -86,7 +86,7 @@ nav:hover{animation: none;  }
     height: 20%;
     width: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0.5;
+    opacity: 0;
     position: relative;
     top:-20%;
 }
