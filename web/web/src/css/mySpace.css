@@ -130,13 +130,14 @@ body{
 }
 .InfoBox h1{text-align: center}
 .InfoBox ul {
+
     list-style: none;
 }
 .InfoBox input{
-    height: 40px;width: 60%;
+    height: 40px;width: 80%;
 }
 .InfoBox select{border: none;}
-.InfoBox li{margin-top: 5px}
+.InfoBox li{margin-top: 15px;}
 .InfoBox .mybtn{
     width: 80%;
     height: 40px;
