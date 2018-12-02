@@ -79,12 +79,17 @@
         <div class="information col-md-10">
             <ul>
                 <li>账号：<p id="userId">${user.userName}</p></li>
+                <li>关注：<p id="guanzhu">99</p> 粉丝：999<p id="Fans"></p> 影评：<p id="yingping">88</p></li>
                 <hr>
-                <li>昵称：<p id="username">${user.nickName}</p> <button id="changeInfo" data-target="#changeInfoModel">修改资料</button></li>
+                <li>昵称：<p id="username">${user.nickName}</p> <a id="changeInfo" data-toggle="modal" data-target="#changeInfoModel">修改资料</a></li>
                 <li>简介：<p id="brief">${user.description}</p></li>
                 <li>偏好：<p id="preferType">${user.prefer}</p></li>
+                <li>地区：<p id="contact">湖北省武汉市</p></li>
+                <li>性别：<p id="sex">男</p></li>
                 <li>生日：<p id="birth">${user.birth}</p></li>
                 <li>工作：<p id="work">${user.work}</p></li>
+
+                <hr>
                 <li></li>
             </ul>
 
@@ -100,29 +105,21 @@
                             <ul class="loginContent">
                                 <hr>
                                 <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="nickname" value="${user.nickName}">
-                                    </div>
+                                    <input type="text" class="loginInput" name="nickname" value="${user.nickName}">
                                 </li>
                                 <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="description" value="${user.description}">
-                                    </div>
+                                    <input type="text" class="loginInput" name="description" value="${user.description}">
                                 </li>
                                 <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="prefer" value="${user.prefer}">
-                                    </div>
+                                    <input type="text" class="loginInput" name="prefer" value="${user.prefer}">
                                 </li>
                                 <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="birth" value="${user.birth}">
-                                    </div>
+                                    <input type="text" class="loginInput" name="birth" value="${user.birth}">
+
                                 </li>
                                 <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="work" value="${user.work}">
-                                    </div>
+                                    <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="work" value="${user.work}">
+
                                 </li>
                                 <li>
                                     <input type="submit" value="提交" class="centeroflogin loginbtn">
@@ -139,7 +136,7 @@
 
     </div>
     <div class="col-md-10 con" id="myComment">
-        <p class="title">我的影评</p>
+        <p class="title">我的影评<a id="newComment" data-toggle="modal" data-target="#AddComment">添加影评</a></p>
         <HR>
         <ul>
             <%--<li class="comment">--%>
@@ -155,44 +152,22 @@
             <%--</li>--%>
             ${user.comments}
         </ul>
-        <ul>
-            <li>
-                <button data-target="#AddComment">添加影评</button>
-            </li>
-        </ul>
+
         <!-- 添加影评 -->
-        <div class="modal fade" id="AddComment">
-            <div class="modal-dialog">
-                <div class="modal-content LoginBox">
-                    <div class="modal-body">
-                        <button type="button" class="close" data-dismiss="modal"> x</button>
-                        <form action="/addComment" method="post">
-                            <ul class="loginContent">
-                                <p class="loginTitle">登录MyMovie</p>
-                                <hr>
-                                <li>
-                                    <div>
-                                        <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="title" placeholder="不多于32个字">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="content" placeholder="不多于10000字">
-                                    </div>
-                                </li>
-                                <li>
-                                    <input type="submit" value="提交" class="centeroflogin loginbtn">
-                                </li>
-                            </ul>
-                        </form>
-
-                    </div>
+    <div class="modal fade" id="AddComment">
+        <div class="modal-dialog">
+            <div class="modal-content LoginBox">
+                <div class="Input_Box col-md-10">
+                    <h1>新建影评</h1>
+                    <textarea class="Input_text1 col-md-12" placeholder="输入标题,不超过32字"></textarea>
+                    <textarea class="Input_text2 col-md-12" placeholder="输入新的短评，不超过10000字"></textarea>
+                    <br>
+                    <div class="Input_Foot col-md-12"> <div class="col-md-10"></div><a class="col-md-2">确定</a> </div>
                 </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
-
+            </div>
+        </div>
     </div>
+
     <div class="col-md-10 con" id="myCollection">
         <p class="title"> 我的收藏</p>
         <hr>
