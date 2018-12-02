@@ -310,7 +310,8 @@ ${server.alert}
             <div class="modal-body">
                 <button type="button" class="close" data-dismiss="modal"> x</button>
                 <form action="/changeInfo" method="post">
-                    <ul class="loginContent">
+                    <ul >
+                        <li><h1>修改信息</h1></li>
                         <li>
                             昵称：<input type="text" class="loginInput" name="nickname" value="${user.nickName}">
                         </li>
@@ -322,19 +323,19 @@ ${server.alert}
                             </select>
                         </li>
                         <li>
-                            简介：<input type="text" class="loginInput" name="description" value="${user.description}">
+                            简介：<input type="text" class="loginInput" name="description" >
                         </li>
                         <li>
-                            喜好：<input type="text" class="loginInput" name="prefer" value="${user.prefer}">
+                            喜好：<input type="text" class="loginInput" name="prefer" >
                         </li>
                         <li>
-                            生日：<input type="text" class="loginInput" name="birth" value="${user.birth}">
+                            生日：<input type="text" class="loginInput" name="birth" >
                         </li>
                         <li>
-                            工作：<input type="text" class="loginInput" name="work" value="${user.work}">
+                            工作：<input type="text" class="loginInput" name="work" >
                         </li>
                         <li>
-                            <input type="submit" value="提交" class="centeroflogin loginbtn">
+                            <input type="submit" value="提交" class="mybtn">
                         </li>
                     </ul>
                 </form>

@@ -98,11 +98,12 @@
         <!-- 修改资料 -->
         <div class="modal fade" id="changeInfoModel">
             <div class="modal-dialog">
-                <div class="modal-content LoginBox">
+                <div class="modal-content InfoBox">
                     <div class="modal-body">
                         <button type="button" class="close" data-dismiss="modal"> x</button>
                         <form action="/changeInfo" method="post">
-                            <ul class="loginContent">
+                            <ul>
+                                <h1>修改信息</h1>
                                 <hr>
                                 <li>
                                     <input type="text" class="loginInput" name="nickname" value="${user.nickName}">
@@ -122,7 +123,7 @@
 
                                 </li>
                                 <li>
-                                    <input type="submit" value="提交" class="centeroflogin loginbtn">
+                                    <input type="submit" value="提交" class="mybtn">
                                 </li>
                             </ul>
                         </form>
