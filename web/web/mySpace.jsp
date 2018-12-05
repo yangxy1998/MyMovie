@@ -186,6 +186,22 @@ ${server.alert}
         </div>
         <div class="information col-md-10">
             <ul>
+                <li>账号：<span id="userId">${user.userName}</span></li>
+                <li>关注：<span id="guanzhu">99</span> 粉丝：<span id="Fans">999</span> 影评：<span id="yingping">88</span></li>
+                <hr>
+                <li>昵称：<span id="username">${user.nickName}</span> <a id="changeInfo"data-toggle="modal" data-target="#changeInfoModel">修改资料</a></li>
+                <li>简介：<span id="brief">${user.description}</span></li>
+                <li>偏好：<span id="preferType">${user.prefer}</span></li>
+                <li>地区：<span id="contact">湖北省武汉市</span></li>
+                <%--<li>性别：<span id="sex">男</span></li>--%>
+                <li>生日：<span id="birth">${user.birth}</span></li>
+                <li>工作：<span id="work">${user.work}</span></li>
+                <li></li>
+            </ul>
+
+        </div>
+        <%--<div class="information col-md-10">
+            <ul>
                 <li>账号：<p id="userId">${user.userName}</p></li>
                 <li>昵称：<p id="username">${user.nickName}</p></li>
                 <li>简介：<p id="brief">${user.description}</p></li>
@@ -195,19 +211,15 @@ ${server.alert}
                 <li></li>
             </ul>
             <button class="mybtn" id="changeInfo" data-toggle="modal" data-target="#changeInfoModel" style="height: 20px">修改资料</button>
-        </div>
+        </div>--%>
     </div>
     <div class="col-md-10 con" id="myComment">
-        <p class="title">我的影评</p>
+        <p class="title">我的影评<a data-toggle="modal" data-target="#AddComment">添加影评</a></p>
         <HR>
         <ul>
             ${user.comments}
         </ul>
-        <ul>
-            <li>
-                <button class="mybtn" data-toggle="modal" data-target="#AddComment">添加影评</button>
-            </li>
-        </ul>
+
     </div>
     <div class="col-md-10 con" id="myCollection">
         <p class="title"> 我的收藏</p>
@@ -230,77 +242,59 @@ ${server.alert}
         <hr>
     </div>
 </div>
-<!-- 修改资料 -->
-<div class="modal fade" id="changeInfoModel">
-    <div class="modal-dialog">
-        <div class="modal-content LoginBox">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"> x</button>
-                <form action="/changeInfo" method="post">
-                    <ul class="loginContent">
-                        <li>
-                            <div>
-                                昵称：<input type="text" class="loginInput" name="nickname" value="${user.nickName}">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                简介：<input type="text" class="loginInput" name="description" value="${user.description}">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                喜好：<input type="text" class="loginInput" name="prefer" value="${user.prefer}">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                生日：<input type="text" class="loginInput" name="birth" value="${user.birth}">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                工作：<input type="text" class="loginInput" name="work" value="${user.work}">
-                            </div>
-                        </li>
-                        <li>
-                            <input type="submit" value="提交" class="centeroflogin loginbtn">
-                        </li>
-                    </ul>
-                </form>
 
-            </div>
-        </div>
-    </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
-<!-- 添加影评 -->
-<div class="modal fade" id="AddComment">
+    <!-- 修改资料 -->
+    <div class="modal fade" id="changeInfoModel">
     <div class="modal-dialog">
-        <div class="modal-content LoginBox">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal"> x</button>
-                <form action="/addComment" method="post">
-                    <ul class="loginContent">
-                        <li>
-                            <div>
-                                标题：<input type="text" class="loginInput" name="title" placeholder="不多于32个字">
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                内容：<input type="text" class="loginInput" style="height: 80%" name="content" placeholder="不多于10000字">
-                            </div>
-                        </li>
-                        <li>
-                            <input type="submit" value="提交" class="centeroflogin loginbtn">
-                        </li>
-                    </ul>
-                </form>
+    <div class="modal-content" id="changeBox">
+    <div class="modal-body">
+    <button type="button" class="close" data-dismiss="modal"> x</button>
+    <h2>修改个人信息</h2>
+    <hr>
+    <form action="/changeInfo" method="post">
+    <ul class="changeContent">
+    <li>
+    昵称：<input type="text" class="loginInput" name="nickname" value="${user.nickName}">
+    </li>
+    <li>
+    简介：<input type="text" class="loginInput" name="description" value="${user.description}">
+    </li>
+    <li>
+    喜好：<input type="text" class="loginInput" name="prefer" value="${user.prefer}">
+    </li>
+    <li>
+    生日：<input type="text" class="loginInput" name="birth" value="${user.birth}">
+    </li>
+    <li>
+    工作：<input type="text" class="loginInput" name="work" value="${user.work}">
+    </li>
+    <li>
+    <input type="submit" value="提交" class="confirm">
+    </li>
+    </ul>
+    </form>
 
-            </div>
-        </div>
+    </div>
+    </div>
     </div><!-- /.modal-content -->
-</div><!-- /.modal-dialog -->
+    </div><!-- /.modal-dialog -->
+    <!-- 添加影评 -->
+    <div class="modal fade" id="AddComment">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 Input_Box">
+        <button type="button" class="close" data-dismiss="modal"> x</button>
+            <h2>新建影评</h2>
+            <hr>
+            <form action="/addComment" method="post">
+                <textarea type="text" class="Input_text1 col-md-12" name="title" placeholder="输入标题(不多于32个字)"></textarea>
+                <hr>
+                <textarea type="text" class="Input_text2 col-md-12" name="content" placeholder="输入新的影评(不多于10000个字)"></textarea>
+
+                <br>
+                <div class="Input_Foot col-md-12"> <div class="col-md-10"></div> <input type="submit" value="提交" class="postBtn col-md-2"></div>
+            </form>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
 
 <!--
 -->

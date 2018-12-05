@@ -9,125 +9,6 @@
     <link rel="stylesheet" href="src/css/mySpace.css">
 </head>
 <body background="content/bg-myspace.jpg">
-<style>
-    .section{
-        text-align:center;
-        width:3px;
-        height:1000px;
-        background:#969797;
-        margin-left:40%;
-        margin-top: 100px;
-        border-radius:3px;
-        position:relative;
-        -webkit-animation:slide 4s linear;
-    }
-    @-webkit-keyframes slide{
-        0%{
-            height:0px;
-        }
-        100%{
-            height:1000px;
-        }
-    }
-    @-webkit-keyframes showIn{
-        0%{
-            opacity:0;
-        }
-        100%{
-            opacity:1;
-        }
-    }
-    .section .text1 h2,.section .text2 h2,.section .text3 h2{
-        position: absolute;
-        margin-left: -90px;
-        margin-top: 20px;
-        width: 70px;
-        height: 20px;
-        color: #969797;
-        font-size: 14px;
-        font-family: 微软雅黑;
-        -webkit-animation: showIn 3s ease;
-        left: -6px;
-        top: 10px;
-    }
-    .section .text1 h1,.section .text2 h1,.section .text3 h1{
-        position: absolute;
-        margin-left: -100px;
-        margin-top:-15px;
-        width:50px;
-        color:#969797;
-        font-size:30px;
-        font-family:微软雅黑;
-        -webkit-animation:showIn 3s ease;
-    }
-    .section:after{
-        content:"待 续";
-        width:100px;
-        color:#969797;
-        position:absolute;
-        margin-left: -50px;
-        bottom: -30px;
-        font-family:微软雅黑;
-        -webkit-animation: showIn 4s ease;
-    }
-    .section .text1,.section .text2,.section .text3{
-        position: absolute;
-        margin-left: -7px;
-        margin-top:-5px;
-        width:10px;
-        height:10px;
-        border-radius: 50%;/*使变成圆*/
-        border:4px solid #939090;
-        background:#DCDBDB;
-        -webkit-transition: all 0.5s;
-        -webkit-animation: showIn ease forwards;
-        opacity: 0;
-    }
-    .section .text1{
-        margin-left: -7px;
-        margin-top:0px;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-delay: 0s;
-    }
-
-    .section .text2{
-        margin-left: -7px;
-        margin-top:350px;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-delay: 1s;
-    }
-    .section .text3{
-        margin-left: -7px;
-        margin-top:720px;
-        -webkit-animation-duration: 2s;
-        -webkit-animation-delay: 2s;
-    }
-    .section .text1:hover,.section .text2:hover,.section .text3:hover{
-        border:4px solid lightblue;
-        background: #D7D5D5;
-        box-shadow: 0 0 1px 1px #DBF2F8;
-    }
-    .section .text1 .words,.section .text2 .words,.section .text3 .words{
-        position: absolute;
-        top:50%;
-        left:400px;
-        width: 250px;
-        overflow: hidden;
-        font-family:微软雅黑;
-        border:3px solid #999696;
-        border-radius:5px;
-        -webkit-animation: showIn 3s ease;
-        -webkit-transition: all 0.5s;
-    }
-    .description{
-        font-size:14px;
-        line-height: 1.5em;
-        margin-left: 60px;
-        margin-right: 20px;
-        margin-top: 30px;
-        text-align: left;
-    }
-</style>
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div >
@@ -185,42 +66,31 @@
                 </ul>
 
             </div>
-            <div class="information col-md-10">
-                <ul>
-                    <li>账号：<p id="userId">888888</p></li>
-                    <li>关注：<p id="guanzhu">99</p> 粉丝：999<p id="Fans"></p> 影评：<p id="yingping">88</p></li>
-                    <hr>
-                    <li>昵称：<p id="username">XXX</p> <a id="changeInfo">修改资料</a></li>
-                    <li>简介：<p id="brief">我来自计算机学院</p></li>
-                    <li>偏好：<p id="preferType">科幻，魔幻</p></li>
-                    <li>地区：<p id="contact">湖北省武汉市</p></li>
-                    <li>性别：<p id="sex">男</p></li>
-                    <li>生日：<p id="birth">2018-11-11</p></li>
-                    <li>工作：<p id="work">学生</p></li>
-                    <li></li>
-                </ul>
+        <div class="information col-md-10">
+            <ul>
+                <li>账号：<span id="userId">${user.userName}</span></li>
+                <li>关注：<span id="guanzhu">99</span> 粉丝：<span id="Fans">999</span> 影评：<span id="yingping">88</span></li>
+                <hr>
+                <li>昵称：<span id="username">${user.nickName}</span> <a id="changeInfo"data-toggle="modal" data-target="#changeInfoModel">修改资料</a></li>
+                <li>简介：<span id="brief">${user.description}</span></li>
+                <li>偏好：<span id="preferType">${user.prefer}</span></li>
+                <li>地区：<span id="contact">湖北省武汉市</span></li>
+                <%--<li>性别：<span id="sex">男</span></li>--%>
+                <li>生日：<span id="birth">${user.birth}</span></li>
+                <li>工作：<span id="work">${user.work}</span></li>
+                <li></li>
+            </ul>
 
-            </div>
+        </div>
 
 
 
     </div>
     <div class="col-md-10 con" id="myComment">
-        <p class="title">我的影评</p>
+        <p class="title">我的影评<a data-toggle="modal" data-target="#AddComment">添加影评</a></p>
         <HR>
         <ul>
-            <li class="comment">
-                <h3>第一条影评</h3>
-                <hr>
-                <p>人都说，爱上一座城，是因为城中住着你爱的人。爱屋及乌自是不言而喻，每个人的生命中...</p>
-                <!--人都说，爱上一座城，是因为城中住着你爱的人。爱屋及乌自是不言而喻，每个人的生命中都会出现这样一个人，纵使尘满面，鬓如霜，也想要和他相伴到岁末晚景。我深信此画面曾被无数人精心描摹过，因为它是人们心里憧憬的最美的爱相逢。这个浪漫的“版图”，也是温暖与真挚包裹的纯粹感情，所刻画的一幅朴素人生。-->
-            </li>
-            <li class="comment">
-            <h3>第二条影评</h3>
-            <hr>
-            <p> ashdkjadsa</p>
-        </li>
-
+            ${user.comments}
         </ul>
 
     </div>
@@ -259,7 +129,58 @@
         <hr>
     </div>
 </div>
+<!-- 修改资料 -->
+<div class="modal fade" id="changeInfoModel">
+    <div class="modal-dialog">
+        <div class="modal-content" id="changeBox">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"> x</button>
+                <h2>修改个人信息</h2>
+                <hr>
+                <form action="/changeInfo" method="post">
+                    <ul class="changeContent">
+                        <li>
+                            昵称：<input type="text" class="loginInput" name="nickname" value="${user.nickName}">
+                        </li>
+                        <li>
+                            简介：<input type="text" class="loginInput" name="description" value="${user.description}">
+                        </li>
+                        <li>
+                            喜好：<input type="text" class="loginInput" name="prefer" value="${user.prefer}">
+                        </li>
+                        <li>
+                            生日：<input type="text" class="loginInput" name="birth" value="${user.birth}">
+                        </li>
+                        <li>
+                            工作：<input type="text" class="loginInput" name="work" value="${user.work}">
+                        </li>
+                        <li>
+                            <input type="submit" value="提交" class="confirm">
+                        </li>
+                    </ul>
+                </form>
 
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+<!-- 添加影评 -->
+<div class="modal fade" id="AddComment">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 Input_Box">
+        <button type="button" class="close" data-dismiss="modal"> x</button>
+        <h2>新建影评</h2>
+        <hr>
+        <form action="/addComment" method="post">
+            <textarea type="text" class="Input_text1 col-md-12" name="title" placeholder="输入标题(不多于32个字)"></textarea>
+            <hr>
+            <textarea type="text" class="Input_text2 col-md-12" name="title" placeholder="输入新的影评(不多于10000个字)"></textarea>
+
+        <br>
+        <div class="Input_Foot col-md-12"> <div class="col-md-10"></div> <input type="submit" value="提交" class="postBtn col-md-2"></div>
+        </form>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
 <!--
 -->
 <script src="src/js/easyJs.js"></script>
@@ -267,3 +188,4 @@
 <script src="src/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
+
