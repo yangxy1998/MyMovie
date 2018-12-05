@@ -1,5 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
+<%--
+  Created by IntelliJ IDEA.
+  User: Yeung
+  Date: 2018/11/29
+  Time: 0:46
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,6 +17,8 @@
     <link rel="stylesheet" href="src/css/Navbar.css">
 </head>
 <body>
+<jsp:useBean id="server" class="util.Server" scope="session"/>
+${server.alert}
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
@@ -19,7 +28,7 @@
             <ul class="nav navbar-nav">
                 <li><A> </A>   </li>
                 <li class="active"><a href="Welcome.html"> 开始</a></li>
-                <li><a href="./index.html">主界面</a></li>
+                <li><a href="/init">主界面</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
@@ -45,8 +54,8 @@
             <ul class="nav navbar-nav navbar-right"  id="logined">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                    <img src="content/City.jpg"id="userInfo"><span class="caret"></span>
-                </a>
+                        <img src="content/City.jpg"id="userInfo"><span class="caret"></span>
+                    </a>
                     <ul class="dropdown-menu" id="acountMenu">
                         <li><a href="mySpace.html"><img src="content/home.svg">  &nbsp;我的空间</a></li>
                         <li class="divider"></li>
@@ -66,8 +75,8 @@
 <div class="bg">
     <img id="WelcomeImage"  src="content/sea.jpg">
     <div>
-    <p id="mTitle">My Movie</p><!--主标题-->
-    <p id="info">感受光影魅力,记录美好时光</p>
+        <p id="mTitle">My Movie</p><!--主标题-->
+        <p id="info">感受光影魅力,记录美好时光</p>
     </div>
     <!--俩按钮-->
     <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>

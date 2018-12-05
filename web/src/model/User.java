@@ -7,7 +7,7 @@ import java.util.List;
 
 public class User {
     //游客
-    public static User GUEST=new User("Guest","");
+    public static User GUEST=new User("游客","");
 
     public String getUserName() {
         return userName;
@@ -29,18 +29,30 @@ public class User {
         this.userName=userName;
         this.password=password;
         this.comments=new ArrayList<>();
+        this.records=new ArrayList<>();
     }
 
     public User(){}
+    //用户名
     private String userName;
+    //密码
     private String password;
+    //昵称
     private String nickName;
+    //简介
     private String description;
+    //爱好
     private String prefer;
+    //生日
     private String birth;
+    //工作
     private String work;
+    //影评
     private List<Pair<String,String>> comments;
 
+    private List<Record> records;
+
+    //添加影评
     public void addComment(String title,String content){
         Pair<String,String> comment=new Pair<String, String>() {
             private final String t=title;
@@ -60,15 +72,34 @@ public class User {
                 return null;
             }
         };
+        if(content.length()>40)
+            this.addRecord("评论","添加了影评："+title,content.substring(0,40)+"...");
+        else
+            this.addRecord("评论","添加了影评："+title,content);
         this.comments.add(comment);
     }
 
+    public void addRecord(String type,String title,String content){
+        Record record=new Record(type,title,content);
+        this.records.add(record);
+    }
+
+    public void addRecord(String type,String title){
+        Record record=new Record(type,title);
+        this.records.add(record);
+    }
+
+    //获取所有影评
     public String getComments(){
         String commentString="";
         for (Pair<String,String> comment:comments) {
             commentString+="<li class=\"comment\"><h3>"+comment.getLeft()+"</h3><p>"+comment.getRight()+"</p></li>";
         }
         return commentString;
+    }
+
+    public List<Record> getRecords(){
+        return records;
     }
 
     public String getNickName() {
@@ -110,4 +141,5 @@ public class User {
     public void setWork(String work) {
         this.work = work;
     }
+
 }
