@@ -15,7 +15,6 @@ public class InitServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-        User.GUEST.setGuest(true);
         Server.server.createUser("username","password");
         Server.server.createUser("admin","admin");
         Server.server.findUser("username").addComment("我的第一条影评",

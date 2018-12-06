@@ -222,7 +222,7 @@ ${server.alert}
 
     </div>
     <div class="col-md-10 con" id="myCollection">
-        <p class="title"> 我的影史</p>
+        <p class="title"> 我的收藏</p>
         <div class="section">
             <%
                 for (int i=0;i<user.getRecords().size();i++) {

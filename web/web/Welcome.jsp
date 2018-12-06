@@ -62,7 +62,7 @@ ${server.alert}
                         <li><a><img src="content/exit.svg">  &nbsp;退出</a></li>
                     </ul>
                 </li>
-                <li><p>Welcome To MyMovie</p></li>
+                <li><p>username</p></li>
 
             </ul>
             <!--<ul class="nav navbar-nav navbar-right" id="logined">
