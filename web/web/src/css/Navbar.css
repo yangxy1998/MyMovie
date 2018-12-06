@@ -47,10 +47,7 @@ nav{
     height: 30px;
     width: 30px;
 }
-nav li p{
-
-    margin-top: 10px;
-}
+#logined p{margin-top: 50px}
 #top{
     color: #2aabd2;
     font-size: large;
