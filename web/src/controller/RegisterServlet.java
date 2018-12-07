@@ -13,6 +13,7 @@ import java.io.IOException;
 public class RegisterServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         String username=request.getParameter("username");
         String password=request.getParameter("password");
         String password_2=request.getParameter("password_2");

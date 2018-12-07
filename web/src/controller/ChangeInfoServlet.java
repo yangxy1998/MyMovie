@@ -11,6 +11,7 @@ import java.io.IOException;
 //修改个人信息的servlet
 public class ChangeInfoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         HttpSession session=request.getSession();
         User user= (User) session.getAttribute("user");
         String nickname=request.getParameter("nickname");

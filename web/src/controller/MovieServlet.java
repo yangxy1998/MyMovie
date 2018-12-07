@@ -17,6 +17,7 @@ public class MovieServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("utf-8");
         String name=request.getParameter("name");
         if(name!=null&&!("").equals(name)){
             HttpSession session=request.getSession();
