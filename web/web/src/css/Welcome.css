@@ -1,5 +1,6 @@
 @font-face {
-    font-family: 方正行楷简体;
+    font-family: 方正行楷;
+    src: url("/content/FZXKJW.TTF") format("truetype"),url("/content/FZXKJW.svg") format("svg");
 
 }
 body{
@@ -26,7 +27,7 @@ body{
     min-width: 1000px;
     animation: appearLeft 4s;
     font-size: 200px;
-    font-family: 方正行楷简体;
+    font-family: 方正行楷;
     color: white;
     position:absolute;
     left: 20%;
@@ -37,7 +38,7 @@ body{
     min-width: 330px;
     animation: appearRight 4s ;
     font-size: 25px;
-    font-family: 方正行楷简体;
+    font-family: 方正行楷;
     color: white;
     position:absolute;
     left: 60%;
@@ -100,95 +101,5 @@ body{
 .mybtn:hover{
     border: 5px #c5cccc solid;
     border-radius: 10px;
-}
-
-.modal-dialog{
-    padding-top: 0px;
-    width: 40%;
-    left: 30%;
-    top: 20%;
-    height: 60%;
-    position: absolute;
-/*    background-color: white;*/
-}
-.LoginBox{
-    width:65%;
-    height: 100%;
-    background-color: #87bad2;
-    margin:auto;
-    border-radius: 7px;
-    border: 1px solid;
-}
-
-.loginContent{
-    list-style: none;
-    padding: 20px;
-}
-.loginTitle{
-    text-align: center;
-    color: #ffffff;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: 方正行楷简体;
-}
-hr{
-    margin-top: 5px;
-}
-
-/*登陆框中按钮*/
-.loginbtn{
-    width: 80%;
-    height: 40px;
-    margin-top: 20px;
-
-    font-family: 方正行楷简体;
-    font-size: 18px;
-    color: #ffffff;
-    background-color: #42a6cd;
-    border-radius: 5px;
-    border: 0px solid #d7d7d7;
-
-}
-.loginbtn:hover{
-    border-radius: 8px;
-    border: 1px solid white;
-}
-.loginbtn:active{
-    background-color: #3a94b9;
-
-}
-form ul li{
-    margin-top: 10px;
-    width: 100%;
-    background-color:transparent;
-
-}
-form ul li div{
-    height: 40px;
-    padding: 5px;
-
-}
-.loginInput{
-    background-color: #cfe0e7;
-    border: 1px solid transparent;
-    border-radius: 5px;
-    width: 80%;
-    height: 40px;
-    margin-left: 15px;
-}
-.loginInput:hover{
-    background-color:white;
-}
-.loginInput:active{
-    background-color: white;
-}
-.centeroflogin{
-    margin-left: 40px;
-}
-.userIcon{
-    width: 30px;
-    height:30px;
 }
 

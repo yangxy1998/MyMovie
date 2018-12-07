@@ -55,7 +55,6 @@ ${server.alert}
             <%
 //                if(user.isGuest()){//未登录
 //                    out.println("<ul class=\"nav navbar-nav navbar-right\"  id=\"unlogin\">\n" +
-//                            "                    &lt;!&ndash;<li style=\"display:inline;\"><a href=\"../navbar/\"><img src=\"content/City.jpg\"></a></li>&ndash;&gt;\n" +
 //                            "                    <li style=\"display:inline;\"><a data-toggle=\"modal\" data-target=\"#LoginModal\">登录</a></li>\n" +
 //                            "                    <li ><a data-toggle=\"modal\" data-target=\"#SignModal\">注册</a></li>\n" +
 //                            "                </ul>");
@@ -72,8 +71,8 @@ ${server.alert}
                             "                            <li><a href=\"/login\"><img src=\"content/exit.svg\">  &nbsp;退出</a></li>\n" +
                             "                        </ul>\n" +
                             "                    </li>\n" +
-                            "                    <li><p>"+user.getNickName()+"</p></li>\n" +
-                            "                    ");
+                            "                    <li id=\"navusername\"><p >"+user.getNickName()+"</p></li>\n" +
+                            "                   </ul> ");
 //                }
             %>
 
@@ -82,6 +81,80 @@ ${server.alert}
         </div><!--/.nav-collapse -->
     </div>
 </nav>
+<!--登录窗口-->
+<div class="modal fade" id="LoginModal">
+    <div class="modal-dialog">
+        <div class="modal-content LoginBox" style="background: #87bad2">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"> x</button>
+                <form action="/login" method="post">
+                    <ul class="loginContent">
+                        <p class="loginTitle">登录MyMovie</p>
+                        <hr>
+                        <li>
+                            <div>
+                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="username" placeholder="UserName">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="password" placeholder="password">
+                            </div>
+                        </li>
+                        <li class="remember">
+                            <input type="checkbox" >Remember Me
+                        </li>
+                        <li>
+                            <input type="submit" value="Login" class="centeroflogin loginbtn">
+                        </li>
+                        <li><p id="loginInfo" class="centeroflogin"></p></li>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+<!--注册窗口-->
+<div class="modal fade" id="SignModal">
+    <div class="modal-dialog">
+        <div class="modal-content LoginBox" style="background: #87bad2">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal"> x</button>
+                <form action="/register" method="post">
+                    <ul class="loginContent">
+                        <p class="loginTitle">注册MyMovie</p>
+                        <hr>
+                        <li>
+                            <div>
+                                <img class="userIcon" src="content/user.svg"><input type="text" class="loginInput" name="username" placeholder="UserName">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="password" placeholder="your password">
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <img class="userIcon" src="content/password.svg"><input type="password" class="loginInput" name="password_2" placeholder="check your password">
+                            </div>
+                        </li>
+
+                        <li>
+                            <input type="submit" value="Register" class="centeroflogin loginbtn">
+                        </li>
+                        <li><p id="signInfo" class="centeroflogin"></p></li>
+                    </ul>
+                </form>
+
+            </div>
+        </div>
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <div class="container myCarousel">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -156,23 +229,23 @@ ${server.alert}
             <div class="mask"><p class="movieName">指环王</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
         <div class="movie Box">
-            <img src="content/movie6.webp" >
+            <img src="content/movie6.jpg" >
             <div class="mask"><p class="movieName">一出好戏</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
         <div class="movie Box" >
-            <img src="content/movie7.webp" >
+            <img src="content/movie7.jpg" >
             <div class="mask"><p class="movieName">碟中谍</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
         <div class="movie Box">
-            <img src="content/movie8.webp" >
+            <img src="content/movie8.jpg" >
             <div class="mask"><p class="movieName">头号玩家</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
         <div class="movie Box">
-            <img src="content/movie9.webp" >
+            <img src="content/movie9.jpg" >
             <div class="mask"><p class="movieName">黑客帝国</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
         <div class="movie Box">
-            <img src="content/movie10.webp" >
+            <img src="content/movie10.jpg" >
             <div class="mask"><p class="movieName">我是传奇</p><p class="moviePointText">评分:</p><p class="moviePoint">9.9</p></div>
         </div>
 

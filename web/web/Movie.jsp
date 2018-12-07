@@ -71,7 +71,7 @@
                             "                            <li><a href=\"/login\"><img src=\"content/exit.svg\">  &nbsp;退出</a></li>\n" +
                             "                        </ul>\n" +
                             "                    </li>\n" +
-                            "                    <li><p>"+user.getNickName()+"</p></li>\n" +
+                            "                    <li id=\"navusername\"><p>"+user.getNickName()+"</p></li>\n" +
                             "                    ");
 //                }
             %>

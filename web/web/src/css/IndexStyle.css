@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 方正行楷;
+    src: url("/content/FZXKJW.TTF") format("truetype"),url("/content/FZXKJW.svg") format("svg");
+
+}
 body{
     text-align: center;
 }
@@ -33,7 +38,7 @@ nav:hover{animation: none;  }
 }
 .choices p{
 
-    font-family: 方正行楷简体;
+    font-family: 方正行楷;
 }
 .choices .trangle{
     height: 0px;
@@ -58,7 +63,7 @@ nav:hover{animation: none;  }
 }
 .txt{
     /*font-style: italic;*/
-    /*font-family: 方正行楷简体;*/
+    /*font-family: 方正行楷;*/
     font-size: 20px;
     position: relative;
     left: -10px;

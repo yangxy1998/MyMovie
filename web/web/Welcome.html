@@ -63,17 +63,6 @@
         </div><!--/.nav-collapse -->
     </div>
 </nav>
-<div class="bg">
-    <img id="WelcomeImage"  src="content/sea.jpg">
-    <div>
-    <p id="mTitle">My Movie</p><!--主标题-->
-    <p id="info">感受光影魅力,记录美好时光</p>
-    </div>
-    <!--俩按钮-->
-    <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>
-    <a href="#" id="sign"  data-toggle="modal" data-target="#SignModal">没有账号，赶紧注册</a>
-    <button class="mybtn" id="tour" onclick={location.href='/init'}>游客访问</button>
-</div>
 <!--登录窗口-->
 <div class="modal fade" id="LoginModal">
     <div class="modal-dialog">
@@ -148,6 +137,18 @@
     </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
+<div class="bg">
+    <img id="WelcomeImage"  src="content/sea.jpg">
+    <div>
+    <p id="mTitle">My Movie</p><!--主标题-->
+    <p id="info">感受光影魅力,记录美好时光</p>
+    </div>
+    <!--俩按钮-->
+    <button class="mybtn" id="login" data-toggle="modal" data-target="#LoginModal">登录</button>
+    <a href="#" id="sign"  data-toggle="modal" data-target="#SignModal">没有账号，赶紧注册</a>
+    <button class="mybtn" id="tour" onclick={location.href='/init'}>游客访问</button>
+</div>
+
 
 <script src="src/jquery/jquery.min.js"></script>
 <script src="src/bootstrap/js/bootstrap.min.js"></script>
