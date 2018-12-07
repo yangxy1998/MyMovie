@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"AddCommentServlet","h":"","u":""},{"l":"ChangeInfoServlet","h":"","u":""},{"l":"InitServlet","h":"","u":""},{"l":"LoginServlet","h":"","u":""},{"l":"Movie","h":"","u":""},{"l":"MovieServlet","h":"","u":""},{"l":"Record","h":"","u":""},{"l":"RegisterServlet","h":"","u":""},{"l":"Server","h":"","u":""},{"l":"User","h":"","u":""},{"l":"Util","h":"","u":""}]
