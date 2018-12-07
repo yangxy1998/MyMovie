@@ -2,21 +2,48 @@ package model;
 
 import util.Util;
 
+/**
+ * 使用记录条目类
+ */
 public class Record {
 
+    /**
+     * 条目类型
+     */
     private String type;
+    /**
+     * 记录时间
+     */
     private String date;
+    /**
+     * 标题
+     */
     private String title;
+    /**
+     * 内容
+     */
     private String content;
 
     public Record(){}
 
+    /**
+     * 记录的构造函数
+     * @param type 类型
+     * @param title 标题
+     * @param content 内容
+     */
     public Record(String type, String title, String content) {
         this.type = type;
         this.date = Util.getDate();
         this.title = title;
         this.content = content;
     }
+
+    /**
+     * 创建一个无内容记录
+     * @param type 类型
+     * @param title 标题
+     */
     public Record(String type,String title){
         this.type=type;
         this.date= Util.getDate();

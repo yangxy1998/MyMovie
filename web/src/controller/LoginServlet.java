@@ -10,9 +10,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-//登陆servlet
+/**
+ * 登录servlet
+ */
 public class LoginServlet extends HttpServlet {
-
+    /**
+     * doPost方法
+     * @param request 请求
+     *                需要username和password参数
+     * @param response 响应
+     *                 登录出错跳转欢迎页面，正常登录则跳转到主页
+     *                 同时会话当中添加属性user
+     * @throws ServletException 异常
+     * @throws IOException 异常
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String userName=request.getParameter("username");
@@ -36,7 +47,16 @@ public class LoginServlet extends HttpServlet {
             }
         }
     }
-
+    /**
+     * doGet方法
+     * 以get方法访问这个servlet，认为未登录
+     * @param request 请求
+     * @param response 响应
+     *                 跳转到欢迎页面
+     *                 在会话中添加user和server属性
+     * @throws ServletException 异常
+     * @throws IOException 异常
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session=request.getSession();
         session.setAttribute("user",User.GUEST);

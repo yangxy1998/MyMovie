@@ -4,21 +4,38 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import java.util.ArrayList;
 import java.util.List;
-//电影类
+
+/**
+ * 电影类
+ */
 public class Movie {
-    //电影名
+    /**
+     * 电影名
+     */
     private String name;
-    //电影职员 左职位 右名字
+    /**
+     * 电影职员表
+     */
     private List<Pair<String,String>> members;
-    //电影简介
+    /**
+     * 简介
+     */
     private String description;
-    //类型
+    /**
+     * 类型
+     */
     private String type;
-    //特性
+    /**
+     * 标签
+     */
     private String tag;
-    //电影热度
+    /**
+     * 热度
+     */
     private int heat;
-    //影评
+    /**
+     * 影评列表
+     */
     private List<Pair<String,String>> comments;
 
     public Movie(String name,String description){
@@ -31,7 +48,11 @@ public class Movie {
         this.comments=new ArrayList<>();
     }
 
-    //添加一个职员
+    /**
+     * 添加一位职员
+     * @param position 职务
+     * @param name 名字
+     */
     public void addMember(String position,String name){
         Pair<String,String> member=new Pair<String, String>() {
             @Override
@@ -104,7 +125,11 @@ public class Movie {
         this.tag = tag;
     }
 
-    //添加一条影评
+    /**
+     * 添加一条影评
+     * @param title 标题
+     * @param content 内容
+     */
     public void addComment(String title,String content){
         Pair<String,String> comment=new Pair<String, String>() {
             private final String t=title;
@@ -127,7 +152,10 @@ public class Movie {
         this.comments.add(comment);
     }
 
-    //获取所有影评
+    /**
+     * 获取该电影条目下所有影评
+     * @return 影评列表HTML字符串
+     */
     public String getComments(){
         String commentString="";
         if(comments!=null)

@@ -9,9 +9,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-//注册
-public class RegisterServlet extends HttpServlet {
 
+/**
+ * 注册servlet
+ */
+public class RegisterServlet extends HttpServlet {
+    /**
+     * doPost方法
+     * @param request 请求
+     *                需要参数username、password、password_2
+     * @param response 响应
+     *                 如果存在这样的username 则导致进入用户重复状态，并跳转到欢迎页面
+     *                 如果两次密码不一致，则导致进入密码不一致状态，并跳转到欢迎页面
+     *                 否则，注册成功，跳转到首页
+     * @throws ServletException 异常
+     * @throws IOException 异常
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         String username=request.getParameter("username");

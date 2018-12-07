@@ -8,8 +8,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-//修改个人信息的servlet
+/**
+ * 修改个人信息servlet
+ */
 public class ChangeInfoServlet extends HttpServlet {
+    /**
+     * doPost方法
+     * 会话当中应有user参数
+     * @param request 请求
+     *                请求当中需要参数nickname、description、prefer、birth、work
+     * @param response 响应
+     *                 返回个人主页页面
+     * @throws ServletException 异常
+     * @throws IOException 异常
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         HttpSession session=request.getSession();

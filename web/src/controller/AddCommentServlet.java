@@ -9,8 +9,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-//添加评论
+/**
+ * 添加影评servlet
+ */
 public class AddCommentServlet extends HttpServlet {
+    /**
+     * doPost方法
+     * 会话需要user、movie参数
+     * @param request 请求
+     *                需要参数title和content
+     * @param response 响应
+     *                 如果movie参数为null，表明是个人中心页面
+     *                 否则，跳转到电影页面，movie.jsp会自动根据movie参数调整编码
+     * @throws ServletException 异常
+     * @throws IOException 异常
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setCharacterEncoding("utf-8");
         HttpSession session=request.getSession();

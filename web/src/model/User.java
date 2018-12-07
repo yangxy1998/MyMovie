@@ -5,8 +5,14 @@ import org.apache.commons.lang3.tuple.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 用户类
+ */
 public class User {
-    //游客
+
+    /**
+     * 游客对象常量
+     */
     public static User GUEST=new User("游客","");
 
     public String getUserName() {
@@ -37,25 +43,51 @@ public class User {
     }
 
     public User(){}
-    //用户名
+
+    /**
+     * 用户登录用户名
+     */
     private String userName;
-    //密码
+
+    /**
+     * 用户登陆密码
+     */
     private String password;
-    //昵称
+    /**
+     * 昵称
+     */
     private String nickName;
-    //简介
+    /**
+     * 简介
+     */
     private String description;
-    //爱好
+    /**
+     * 爱好
+     */
     private String prefer;
-    //生日
+    /**
+     * 生日
+     */
     private String birth;
-    //工作
+    /**
+     * 工作
+     */
     private String work;
-    //影评
+    /**
+     * 影评列表
+     */
     private List<Pair<String,String>> comments;
 
+    /**
+     * 记录列表
+     * @see Record
+     */
     private List<Record> records;
 
+    /**
+     * 是否是游客用户
+     * @return 是则为true，不是则为false
+     */
     public boolean isGuest() {
         return guest;
     }
@@ -66,7 +98,11 @@ public class User {
 
     private boolean guest;
 
-    //添加影评
+    /**
+     * 添加影评
+     * @param title 题目
+     * @param content 内容
+     */
     public void addComment(String title,String content){
         Pair<String,String> comment=new Pair<String, String>() {
             private final String t=title;
@@ -93,17 +129,31 @@ public class User {
         this.comments.add(comment);
     }
 
+    /**
+     * 添加一条记录
+     * @param type 类型
+     * @param title 题目
+     * @param content 内容
+     */
     public void addRecord(String type,String title,String content){
         Record record=new Record(type,title,content);
         this.records.add(record);
     }
 
+    /**
+     * 添加一条记录
+     * @param type 类型
+     * @param title 内容
+     */
     public void addRecord(String type,String title){
         Record record=new Record(type,title);
         this.records.add(record);
     }
 
-    //获取所有影评
+    /**
+     * 得到用户影评列表字符串
+     * @return 影评表HTML字符串
+     */
     public String getComments(){
         String commentString="";
         for (Pair<String,String> comment:comments) {

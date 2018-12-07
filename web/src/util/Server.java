@@ -3,13 +3,23 @@ package util;
 import model.Movie;
 import model.User;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Server {
+/**
+ * 模拟服务器
+ */
+public class Server implements Serializable {
 
+    /**
+     * 是否已被初始化
+     */
     public static boolean isInitialized=false;
 
+    /**
+     * 初始化服务器，装入模拟数据库的数据
+     */
     public static void init(){
         isInitialized=true;
         User.GUEST.setGuest(true);
@@ -39,28 +49,51 @@ public class Server {
         Server.server.findMovie("大象席地而坐").setHeat(2133);
     }
 
+    /**
+     * 模拟服务器
+     */
     public static Server server=new Server();
 
     public static Server getServer() {
         return server;
     }
 
-    //用户名重复
+    /**
+     * 用户名重复
+     */
     public final static int STATUS_DUPLICATE_USER=1;
-    //用户输入的密码错误
+    /**
+     * 用户输入的密码错误
+     */
     public final static int STATUS_PASSWORD_ERROR=2;
-    //两次密码不一致
+    /**
+     * 两次密码不一致
+     */
     public final static int STATUS_PASSWORD_NOT_CONFIRMED=3;
-
+    /**
+     * 重复上架的电影
+     */
     public final static int STATUS_DUPLICATE_MOVIE=4;
 
+    /**
+     * 未找到用户
+     */
     public final static int STATUS_USER_NOT_FOUND=5;
 
+    /**
+     * 未登录状态
+     */
     public final static int STATUS_NOT_LOGIN=6;
 
-    //服务器上的用户列表
+    /**
+     * 数据库上的用户列表
+     */
+
     public List<User> users=new ArrayList<>();
 
+    /**
+     * 数据库上的电影列表
+     */
     public List<Movie> movies=new ArrayList<>();
 
     /**
@@ -92,7 +125,11 @@ public class Server {
         return null;
     }
 
-    //用电影名查找一个电影
+    /**
+     * 用电影名查找电影
+     * @param name 电影名
+     * @return 电影对象
+     */
     public Movie findMovie(String name){
         for (Movie movie:movies) {
             if(movie.getName().equals(name))return movie;
@@ -100,7 +137,12 @@ public class Server {
         return null;
     }
 
-    //上架一个电影
+    /**
+     * 上架一个新电影
+     * @param name 电影名
+     * @param description 描述
+     * @return 电影对象
+     */
     public Movie shelfMovie(String name,String description){
         if(findMovie(name)!=null)errorMessage(STATUS_DUPLICATE_MOVIE);
         else{
@@ -111,7 +153,11 @@ public class Server {
         return null;
     }
 
-    //通过类型查找电影
+    /**
+     * 通过类型type查找电影
+     * @param type 类型
+     * @return 电影列表
+     */
     public List<Movie> getMoviesByType(String type){
         if(type==null)return this.movies;
         else{
@@ -123,7 +169,11 @@ public class Server {
         }
     }
 
-    //通过标签查找电影
+    /**
+     * 通过标签tag查找电影
+     * @param tag 标签
+     * @return 电影列表
+     */
     public List<Movie> getMoviesByTag(String tag){
         if(tag==null)return this.movies;
         else{
@@ -135,7 +185,11 @@ public class Server {
         }
     }
 
-    //获取电影列表HTML
+    /**
+     * 获取电影列表HTML字符串
+     * @return HTML字符串
+     * {@link #getHtmlFromList(List)}
+     */
     public String getMoviesHtml(){
         List<Movie> movieList=new ArrayList<>();
         long most=2147483647;
@@ -154,7 +208,11 @@ public class Server {
         return getHtmlFromList(movieList);
     }
 
-    //获取电影列表HTML
+    /**
+     * 获取电影列表HTML字符串
+     * @param movies 电影列表
+     * @return HTML字符串
+     */
     private String getHtmlFromList(List<Movie> movies){
         String html="";
         html+="<li class=\"top3\" onclick={location.href='/movie?name="+
@@ -178,7 +236,10 @@ public class Server {
         return html;
     }
 
-    //错误信息
+    /**
+     * 向网页提示错误信息
+     * @param status 服务器状态
+     */
     public void errorMessage(int status){
         switch (status){
             case STATUS_PASSWORD_ERROR:
@@ -201,7 +262,11 @@ public class Server {
         }
     }
 
-    //打印错误信息HTML
+    /**
+     * 将错误信息转为响应里面的JavaScript alert函数
+     * @return 目标JavaScript字符串
+     * {@link #errorMessage(int)}
+     */
     public String getAlert() {
         if(server.alert==null)return "";
         String alert=server.alert;
