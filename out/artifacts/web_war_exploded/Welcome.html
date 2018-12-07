@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="content/icon.ico">
     <title>MyMovie</title>
-    <link rel="stylesheet"href="src/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="src/css/Welcome.css">
     <link rel="stylesheet" href="src/css/Navbar.css">
 </head>
@@ -20,20 +19,18 @@
             <ul class="nav navbar-nav">
                 <li><A> </A>   </li>
                 <li class="active"><a href="Welcome.html"> 开始</a></li>
-                <li><a href="./index.html">主界面</a></li>
+                <li><a href="./index.jsp">主界面</a></li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="science.html">科幻星空</a></li>
-                        <li><a href="magic.html">魔幻史诗</a></li>
-                        <li><a href="love.html">纯爱之家</a></li>
-                        <li><a href="happy.html">欢乐剧场</a></li>
-                        <li><a href="classic.html">文艺经典</a></li>
-                        <li><a href="Welcome.html"> 开始</a></li>
+                        <li><a href="index.jsp?type=science">科幻星空</a></li>
+                        <li><a href="index.jsp?type=magic">魔幻史诗</a></li>
+                        <li><a href="index.jsp?type=love">纯爱之家</a></li>
+                        <li><a href="index.jsp?type=happy">欢乐剧场</a></li>
+                        <li><a href="index.jsp?type=classic">文艺经典</a></li>
+                        <li><a href="index.jsp?type=others">惊喜杂烩</a></li>
                     </ul>
                 </li>
-
-                <li><a href="#about">About</a></li>
 
             </ul>
 
@@ -51,12 +48,12 @@
                     <img src="content/City.jpg"id="userInfo"><span class="caret"></span>
                 </a>
                     <ul class="dropdown-menu" id="acountMenu">
-                        <li><a href="mySpace.html"><img src="content/home.svg">  &nbsp;我的空间</a></li>
+                        <li><a href="mySpace.jsp"><img src="content/home.svg">  &nbsp;我的空间</a></li>
                         <li class="divider"></li>
                         <li><a><img src="content/exit.svg">  &nbsp;退出</a></li>
                     </ul>
                 </li>
-                <li><p>username</p></li>
+                <li><p>Welcome To MyMovie</p></li>
 
             </ul>
             <!--<ul class="nav navbar-nav navbar-right" id="logined">
@@ -99,9 +96,6 @@
                         </li>
                         <li class="remember centeroflogin">
                             <input type="checkbox" >Remember Me
-                        </li>
-                        <li>
-                            <a href="" class="centeroflogin">Forgot username or password?</a>
                         </li>
                         <li>
                             <input type="submit" value="Login" class="centeroflogin loginbtn">

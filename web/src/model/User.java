@@ -30,6 +30,10 @@ public class User {
         this.password=password;
         this.comments=new ArrayList<>();
         this.records=new ArrayList<>();
+        this.guest=false;
+        this.nickName=userName;
+        this.description="";
+        this.prefer="";
     }
 
     public User(){}
@@ -51,6 +55,16 @@ public class User {
     private List<Pair<String,String>> comments;
 
     private List<Record> records;
+
+    public boolean isGuest() {
+        return guest;
+    }
+
+    public void setGuest(boolean guest) {
+        this.guest = guest;
+    }
+
+    private boolean guest;
 
     //添加影评
     public void addComment(String title,String content){
