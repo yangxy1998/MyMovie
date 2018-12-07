@@ -1,4 +1,5 @@
 <%@ page import="org.apache.commons.lang3.tuple.Pair" %>
+<%@ page import="util.Server" %>
 <%--
   Created by IntelliJ IDEA.
   User: Yeung
@@ -21,7 +22,15 @@
 <body background="content/bg-myspace.jpg">
 <jsp:useBean id="user" class="model.User" scope="session"/>
 <jsp:useBean id="server" class="util.Server" scope="session"/>
-${server.alert}
+<%
+    if(user.isGuest()) {
+        Server.server.errorMessage(Server.STATUS_NOT_LOGIN);
+        response.sendRedirect("./Welcome.jsp");
+    }
+    else{
+        out.println(server.getAlert());
+    }
+%>
 <%
     int size=user.getRecords().size();
     out.println("<style>\n" +
@@ -158,7 +167,7 @@ ${server.alert}
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a>退出</a></li>
+                <li><a href="/login">退出</a></li>
             </ul>
 
         </div><!--/.nav-collapse -->

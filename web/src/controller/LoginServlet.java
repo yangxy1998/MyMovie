@@ -12,12 +12,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 //登陆servlet
 public class LoginServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String userName=request.getParameter("username");
         String password=request.getParameter("password");
         if(userName!=null){
             User user=Server.server.findUser(userName);
-            user.addRecord("登录","您登陆了MyMovie");
             if(user==null){
                 Server.server.errorMessage(Server.STATUS_USER_NOT_FOUND);
                 response.sendRedirect("./Welcome.jsp");
@@ -27,14 +27,19 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect("./Welcome.jsp");
             }
             else{
+                user.addRecord("登录","您登陆了MyMovie");
                 HttpSession session=request.getSession();
                 session.setAttribute("user",user);
+                session.setAttribute("server",Server.server);
                 response.sendRedirect("./index.jsp");
             }
         }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        HttpSession session=request.getSession();
+        session.setAttribute("user",User.GUEST);
+        session.setAttribute("server",Server.server);
+        response.sendRedirect("./Welcome.jsp");
     }
 }

@@ -52,14 +52,14 @@
             </ul>
 
             <%
-                if(user.isGuest()){//未登录
-                    out.println("<ul class=\"nav navbar-nav navbar-right\"  id=\"unlogin\">\n" +
-                            "                    &lt;!&ndash;<li style=\"display:inline;\"><a href=\"../navbar/\"><img src=\"content/City.jpg\"></a></li>&ndash;&gt;\n" +
-                            "                    <li style=\"display:inline;\"><a data-toggle=\"modal\" data-target=\"#LoginModal\">登录</a></li>\n" +
-                            "                    <li ><a data-toggle=\"modal\" data-target=\"#SignModal\">注册</a></li>\n" +
-                            "                </ul>");
-                }
-                else{//登录
+//                if(user.isGuest()){//未登录
+//                    out.println("<ul class=\"nav navbar-nav navbar-right\"  id=\"unlogin\">\n" +
+//                            "                    &lt;!&ndash;<li style=\"display:inline;\"><a href=\"../navbar/\"><img src=\"content/City.jpg\"></a></li>&ndash;&gt;\n" +
+//                            "                    <li style=\"display:inline;\"><a data-toggle=\"modal\" data-target=\"#LoginModal\">登录</a></li>\n" +
+//                            "                    <li ><a data-toggle=\"modal\" data-target=\"#SignModal\">注册</a></li>\n" +
+//                            "                </ul>");
+//                }
+//                else{//登录
                     out.println("<ul class=\"nav navbar-nav navbar-right\"  id=\"logined\">\n" +
                             "                    <li class=\"dropdown\">\n" +
                             "                        <a class=\"dropdown-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
@@ -68,12 +68,12 @@
                             "                        <ul class=\"dropdown-menu\" id=\"acountMenu\">\n" +
                             "                            <li><a href=\"mySpace.jsp\"><img src=\"content/home.svg\">  &nbsp;我的空间</a></li>\n" +
                             "                            <li class=\"divider\"></li>\n" +
-                            "                            <li><a><img src=\"content/exit.svg\">  &nbsp;退出</a></li>\n" +
+                            "                            <li><a href=\"/login\"><img src=\"content/exit.svg\">  &nbsp;退出</a></li>\n" +
                             "                        </ul>\n" +
                             "                    </li>\n" +
                             "                    <li><p>"+user.getNickName()+"</p></li>\n" +
                             "                    ");
-                }
+//                }
             %>
         </div><!--/.nav-collapse -->
     </div>

@@ -11,6 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 //注册
 public class RegisterServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username=request.getParameter("username");
         String password=request.getParameter("password");
