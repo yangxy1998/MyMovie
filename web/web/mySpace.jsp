@@ -39,7 +39,7 @@
             "        width:3px;\n" +
             "        height:"+(size*200+50)+"px;\n" +
             "        background:#969797;\n" +
-            "        margin-left:40%;\n" +
+            "        margin-left:20%;\n" +
             "        margin-top: 100px;\n" +
             "        border-radius:3px;\n" +
             "        position:relative;\n" +
@@ -104,14 +104,14 @@
                 "        width:10px;\n" +
                 "        height:10px;\n" +
                 "        border-radius: 50%;/*使变成圆*/\n" +
-                "        border:4px solid #939090;\n" +
+                "        border:8px solid #939090;\n" +
                 "        background:#DCDBDB;\n" +
                 "        -webkit-transition: all 0.5s;\n" +
                 "        -webkit-animation: showIn ease forwards;\n" +
                 "        opacity: 0;\n" +
                 "    }\n" +
                 "    .section .text"+i+":hover{\n" +
-                "        border:4px solid lightblue;\n" +
+                "        border:8px solid lightblue;\n" +
                 "        background: #D7D5D5;\n" +
                 "        box-shadow: 0 0 1px 1px #DBF2F8;\n" +
                 "    }\n" +
@@ -119,7 +119,7 @@
                 "        position: absolute;\n" +
                 "        top:50%;\n" +
                 "        left:50px;\n" +
-                "        width: 250px;\n" +
+                "        width: 500px;\n" +
                 "        overflow: hidden;\n" +
                 "        font-family:微软雅黑;\n" +
                 "        border:3px solid #999696;\n" +
